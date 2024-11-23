@@ -1,4 +1,4 @@
-// Package disgo is a collection of packages for interaction with the Discord Bot and OAuth2 API.
+// Package gocord is a collection of packages for interaction with the Discord Bot and OAuth2 API.
 //
 // # Discord
 //
@@ -43,7 +43,7 @@
 // # Voice
 //
 // Package voice provides a high level client interface for interacting with Discord voice.
-package disgo
+package gocord
 
 import (
 	"runtime"
@@ -55,7 +55,7 @@ import (
 
 const (
 	// Name is the library name
-	Name = "disgo"
+	Name = "gocord"
 	// Module is the library module name
 	Module = "github.com/nextep-community/gocord"
 	// GitHub is a link to the libraries GitHub repository
@@ -63,7 +63,7 @@ const (
 )
 
 var (
-	// Version is the currently used version of DisGo
+	// Version is the currently used version of gocord
 	Version = getVersion()
 
 	SemVersion = "semver:" + Version

@@ -1,42 +1,40 @@
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/nextep-community/gocord/blob/master/LICENSE).
 [![Go Reference](https://pkg.go.dev/badge/github.com/nextep-community/gocord.svg)](https://pkg.go.dev/github.com/nextep-community/gocord)
 [![Go Report](https://goreportcard.com/badge/github.com/nextep-community/gocord)](https://goreportcard.com/report/github.com/nextep-community/gocord)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/disgoorg/disgo)](https://golang.org/doc/devel/release.html)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/nextep-community/gocord/blob/master/LICENSE)
-[![DisGo Version](https://img.shields.io/github/v/tag/disgoorg/disgo?label=release)](https://github.com/nextep-community/gocord/releases/latest)
-[![DisGo Discord](https://discord.com/api/guilds/817327181659111454/widget.png)](https://discord.gg/TewhTfDpvW)
 
-<img align="right" src="/.github/discord_gopher.png" width=192 alt="discord gopher">
+# Gocord
 
-# DisGo
+Gocord is a Go library forked from [DisGo](https://github.com/disgoorg/disgo),
+that is a Discord API wrapper written in Go.
 
-DisGo is a [Discord](https://discord.com) API wrapper written in
-[Golang](https://golang.org/) aimed to be consistent, modular, customizable and
-higher level than other Discord API wrappers.
-
-## Summary
-
-1. [Stability](#stability)
-2. [Features](#features)
-3. [Missing Features](#missing-features)
-4. [Getting Started](#getting-started)
-5. [Documentation](#documentation)
-6. [Examples](#examples)
-7. [Other interesting Projects to look at](#other-interesting-projects-to-look-at)
-8. [Other Golang Discord Libraries](#other-golang-discord-libraries)
-9. [Troubleshooting](#troubleshooting)
-10. [Contributing](#contributing)
-11. [License](#license)
+> **Why fork?:** This project was created for internal use within the bot
+> [Digo](https://github.com/nextep-community/digo), which was developed by
+> Nextep to study and enhance the team's knowledge of Go. For this reason, we
+> wanted maximum control and to ensure the library is updated as quickly as
+> possible with the latest Discord changes. However, we didn’t want to start
+> from scratch.
 
 ### Stability
 
-The public API of DisGo is mostly stable at this point in time. Smaller breaking
-changes can happen before the v1 is released.
+The public API of Gocord is mostly stable at this point in time. Smaller
+breaking changes can happen before the v1 is released.
 
 After v1 is released breaking changes may only happen if the Discord API
 requires them. They tend to break their released API versions now and then. In
-general for every new Discord API version the major version of DisGo should be
+general for every new Discord API version the major version of Gocord should be
 increased and with that breaking changes between non-major versions should be
 held to a minimum.
+
+## Documentation
+
+Documentation is wip and can be found under
+
+- [![Go Reference](https://pkg.go.dev/badge/github.com/nextep-community/gocord.svg)](https://pkg.go.dev/github.com/nextep-community/gocord)
+- [![Discord Documentation](https://img.shields.io/badge/Discord%20Documentation-blue.svg)](https://discord.com/developers/docs)
+- [Examples](./_examples/README.md)
+
+GitHub Wiki is currently under construction. We appreciate help here.
 
 ### Features
 
@@ -70,7 +68,7 @@ held to a minimum.
 $ go get github.com/nextep-community/gocord
 ```
 
-### Building a DisGo Instance
+### Building a gocord Instance
 
 Build a bot client to interact with the Discord API
 
@@ -90,7 +88,7 @@ import (
 )
 
 func main() {
-	client, err := disgo.New("token",
+	client, err := gocord.New("token",
 		// set gateway options
 		bot.WithGatewayConfigOpts(
 			// set enabled intents
@@ -119,23 +117,9 @@ func main() {
 }
 ```
 
-### Full Ping Pong Example
-
-A full Ping Pong example can also be found
-[here](https://github.com/nextep-community/gocord/blob/master/_examples/ping_pong/example.go)
-
 ### Logging
 
-DisGo uses [slog](https://pkg.go.dev/log/slog) for logging.
-
-## Documentation
-
-Documentation is wip and can be found under
-
-- [![Go Reference](https://pkg.go.dev/badge/github.com/nextep-community/gocord.svg)](https://pkg.go.dev/github.com/nextep-community/gocord)
-- [![Discord Documentation](https://img.shields.io/badge/Discord%20Documentation-blue.svg)](https://discord.com/developers/docs)
-
-GitHub Wiki is currently under construction. We appreciate help here.
+gocord uses [slog](https://pkg.go.dev/log/slog) for logging.
 
 ## Examples
 
@@ -145,19 +129,7 @@ You can find examples
 There is also a bot template with commands & db
 [here](https://github.com/disgoorg/bot-template)
 
-or in these projects:
-
-- [DisGo-Butler](https://github.com/nextep-community/gocord-butler)
-- [Reddit-Discord-Bot](https://github.com/TopiSenpai/Reddit-Discord-Bot)
-- [Kitsune-Bot](https://github.com/TopiSenpai/Kitsune-Bot)
-- [KittyBot](https://github.com/KittyBot-Org/KittyBotGo)
-
-## Libraries for DisGo
-
-- [disgomd](https://github.com/eminarican/disgomd) is a command utility library
-  that uses struct based approach
-
-## Other interesting Projects to look at
+## Other interesting projects
 
 ### [Lavalink](https://github.com/freyacodes/Lavalink)
 
@@ -165,17 +137,15 @@ Is a standalone audio sending node based on
 [Lavaplayer](https://github.com/sedmelluq/lavaplayer) and JDA-Audio. Which
 allows for sending audio without it ever reaching any of your shards. Lavalink
 can be used in combination with
-[DisGolink](https://github.com/nextep-community/gocordlink) for music Bots
 
-Being used in production by FredBoat, Dyno, LewdBot, and more.
-
-### [DisGolink](https://github.com/nextep-community/gocordlink)
+### [Golink](https://github.com/nextep-community/golink)
 
 Is a [Lavalink-Client](https://github.com/freyacodes/Lavalink) which can be used
 to communicate with Lavalink to play/search tracks
 
 ## Other Golang Discord Libraries
 
+- [DisGo](https://github.com/disgoorg/disgo)
 - [discordgo](https://github.com/bwmarrin/discordgo)
 - [disgord](https://github.com/andersfylling/disgord)
 - [arikawa](https://github.com/diamondburned/arikawa)
@@ -183,21 +153,19 @@ to communicate with Lavalink to play/search tracks
 
 ## Troubleshooting
 
-For help feel free to open an issue or reach out on
-[Discord](https://discord.gg/TewhTfDpvW)
+TODO
 
 ## Contributing
 
-Contributions are welcomed but for bigger changes we recommend first reaching
-out via [Discord](https://discord.gg/TewhTfDpvW) or create an issue to discuss
-your problems, intentions and ideas.
+TODO
+
+## Special Thanks
+
+We would like to thank the [DisGo](https://github.com/disgoorg/disgo) team and
+community.
 
 ## License
 
-Distributed under the
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/nextep-community/gocord/blob/master/LICENSE).
 See LICENSE for more information.
 
-## Supported by Jetbrains
-
-<a href="https://www.jetbrains.com/community/opensource" target="_blank" title="Jetbrain Open Source Community Support"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="Jetbrain Open Source Community Support" width="400px">
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/nextep-community/gocord/blob/master/LICENSE).
